@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="css\main.css">
+	<script src="https://code.jquery.com/jquery-2.1.0.min.js"></script>
+	<script type="text/javascript" src="http://jqueryrotate.googlecode.com/svn/trunk/jQueryRotate.js"></script>
+</head>
+<body>
+<div id="colorWheel2">
+  <span class="color01">Hey you !</span>
+  <span class="color02"></span>
+  <span class="color03"></span>
+  <span class="color04"></span>
+  <span class="color05"></span>
+  <span class="color06"></span>
+  <span class="color07"></span>
+  <span class="color08"></span>
+  <span class="color09"></span>
+  <span class="color10"></span>
+</div>
+
+<div id="parrot">
+	<img src="parrot.gif" alt="Touch Me" height="340" width="250">
+	<p class="bubble" id="parrot_text">Click the wheel to rotate!!</p>
+	<a id="rotator"><img id="spinme" src="wheel.jpg" alt="Touch Me" height="300" width="500"></a>
+</div>
+<a href="#" id="arrow"><span>&#9658;&#9658;</span></a>
+
+</body>
+<script type="text/javascript">
+	var value = 0
+$("#spinme").rotate({ 
+   bind: 
+     { 
+        click: function(){
+            value +=Math.floor((Math.random()*3600)+1);
+            $(this).rotate({ animateTo:value});
+			$("#parrot_text").text("Dnsdfgsfdg:"+value);
+        }
+     } 
+   
+});
+</script>
+</html>
